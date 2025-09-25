@@ -1,4 +1,4 @@
-module github.com/tekluabayneh/orders-api.git
+module github.com/tekluabayneh/orders-api
 
 go 1.24.6
 

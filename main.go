@@ -1,25 +1,19 @@
 package main
 
 import (
-	"github.com/go-chi/chi/v5"
-	"log"
-	"net/http"
+	"context"
+	"fmt"
+
+	"github.com/tekluabayneh/orders-api/application"
 )
 
 func main() {
 
-	server := &http.Server{
-		Addr:    ":3000",
-		Handler: http.HandlerFunc(BesicHndler),
-	}
+	app := application.New()
+	err := app.Start(context.TODO())
 
-	log.Print("servser is runnign")
-	err := server.ListenAndServe()
 	if err != nil {
-		log.Fatal("failed to listen to server")
+		fmt.Println("failed to start app")
 	}
-}
 
-func BesicHndler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello World"))
 }
