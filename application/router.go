@@ -17,7 +17,6 @@ func loadRoutes() *chi.Mux {
 	})
 
 	router.Route("/orders", loadOrderRoutes)
-
 	return router
 }
 
